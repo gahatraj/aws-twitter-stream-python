@@ -5,7 +5,7 @@ import json
 import boto3
 import time
 import os
-
+import config
 
 class TweetStreamListener(StreamListener):
     # on success
@@ -47,10 +47,10 @@ if __name__ == '__main__':
     kinesis_stream_name = 'firehose-epl-data-stream'
 
     # twitter/aws credentials
-    consumer_key = 'ZKVqpdoDKSs2DQWjVQ46q2XRS'
-    consumer_secret = 'glwS9A4Bk3AOuCASEIuxTRUyMhwi5AmM5zGmrRh6bcODlh14lk'
-    access_token = '1246290030470909953-N5Hq678SX0EW1mDMm2SKiGzeQQxvcQ'
-    access_token_secret = 'ZGybVhhY0V41dD4vqxXEDe0xS5oWlDcsCYJPeqIPV33Ec'
+    consumer_key = config.consumer_key
+    consumer_secret = config.consumer_secret
+    access_token = config.access_token
+    access_token_secret = config.access_token_secret
 
     # set twitter keys/tokens
     auth = OAuthHandler(consumer_key, consumer_secret)
