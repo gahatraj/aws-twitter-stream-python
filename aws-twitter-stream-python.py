@@ -41,7 +41,7 @@ class TweetStreamListener(StreamListener):
 if __name__ == '__main__':
     # kinesis connection
     session = boto3.Session(profile_name='profilename')
-    firehose_client = session.client('firehose', region_name='us-east-1')
+    firehose_client = session.client('firehose', region_name='regionname')
 
     # Kinesis stream name
     kinesis_stream_name = 'firehose-data-stream-name'
